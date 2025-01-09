@@ -1,0 +1,24 @@
+---
+- hosts: web 
+  become: true 
+  tasks: 
+    - name: Install Nginx 
+      apt: 
+        name: nginx 
+        state: present 
+        update_cache: true 
+
+    - name: Start Nginx service 
+      service: 
+        name: nginx 
+        state: started 
+        enabled: yes 
+
+    - name: Verify Nginx service status 
+      shell: systemctl status nginx 
+      register: nginx_status 
+
+    - name: Check Nginx service status 
+      assert: 
+        that: nginx_status.rc == 0 
+        msg: "Nginx service is not running"
