@@ -6,10 +6,11 @@
      ansible.builtin.package:
       name: nodejs
       state: present
-    - name: start the nodejs
-        ansible.builtin.service:
-        name: nginx
-        state: started
+   - name: start the nodejs
+     ansible.builtin.package: 
+      name: nodejs
+      state: started 
+   
    
    
 
