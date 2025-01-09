@@ -1,15 +1,16 @@
- - name: install and run nodejs
+ - name: install and run nginx
    hosts: web
    become: yes # -b
    tasks:
-   - name: install nodejs
+   - name: install nginx
      ansible.builtin.package:
-      name: nodejs
+      name: nginx
       state: present
-   - name: start the nodejs
+   - name: start the nginx
      ansible.builtin.package: 
-      name: nodejs
+      name: nginx
       state: started 
+      enabled: yes
    
    
    
