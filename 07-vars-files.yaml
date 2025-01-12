@@ -1,6 +1,6 @@
 - name: variables from files
   hosts: local
-  connectio: local
+  connection: local
   vars_files:
   - course.yaml
   tasks:
