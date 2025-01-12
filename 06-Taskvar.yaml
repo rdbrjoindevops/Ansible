@@ -1,17 +1,17 @@
 - name: variables
   hosts: local
   connection: local
-  vars: # play level variables
-    COURSE: "Devops with AWS"
+  vars:
+    COURSE: "DevOps with AWS"
     DURATION: 120hrs
     TRAINER: siva
   tasks:
-  - name: print the variables
-    vars: # task level variables ,access only with in the task ,local variables
-      COURSE: Ansible
-    ansible.builtin.debug:
-      msg: "course is {{COURSE}} ,duration is {{DURATION}}, ,Trainer is {{TRAINER}}"
+    - name: print the variables
+      vars: 
+        COURSE: Ansible 
+      ansible.builtin.debug:
+        msg: "course is {{ COURSE }} ,duration is {{ DURATION }}, Trainer is {{ TRAINER }}"
 
- - name: print the variables1
-    ansible.builtin.debug:
-      msg: "course is {{COURSE}} ,duration is {{DURATION}}, ,Trainer is {{TRAINER}}"
+    - name: print the variables1
+      ansible.builtin.debug:
+        msg: "course is {{ COURSE }} ,duration is {{ DURATION }}, Trainer is {{ TRAINER }}"
