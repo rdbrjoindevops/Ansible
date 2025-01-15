@@ -39,7 +39,7 @@
 
   - name: check valid ip or not
     vars:
-      ip: "235.467.34.75"   
+      ip: "172.31.83.84"   # try false ip adress and check
     ansible.builtin.debug:
       msg: "{{ ip | ansible.utils.ipaddr }}"  
 
