@@ -15,7 +15,7 @@
 
   - name: conver map into list
     vars:
-      courses:
+      course:
         name: ansible
         duration: 20hrs
         trainer:  siva
